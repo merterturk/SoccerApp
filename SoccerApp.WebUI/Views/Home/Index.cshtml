@@ -1,0 +1,29 @@
+﻿@model SoccerApp.WebUI.ViewModels.TeamViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="container">
+    <h2 class="text-center text-primary">10.07.2021 Tarihinde Oynanan Maçlar</h2>
+    <div class="row" style="margin-top:35px; margin-left:135px;">
+        @foreach (var item in Model.HomeTeams)
+        {
+            <div class="col-md-6">
+                <img src="~/Images/@item.ImageUrl" width="150" height="150" />
+                <h4 class="ml-4">@item.Name</h4>
+                <h5 class="font-weight-bold" style="margin-left:65px;">@item.Current</h5>
+                <span style="margin-left:65px;">-</span>
+            </div>
+        }
+        @foreach (var item2 in Model.AwayTeams)
+        {
+            <div class="col-md-6">
+                    <h5 class="font-weight-bold" style="margin-left:65px;">@item2.Current</h5>
+                    <h4 style="margin-left:25px;">@item2.Name</h4>
+                <img src="~/Images/@item2.ImageUrl" width="150" height="150" />
+            </div>
+        }
+    </div>
+</div>
+
+
+
